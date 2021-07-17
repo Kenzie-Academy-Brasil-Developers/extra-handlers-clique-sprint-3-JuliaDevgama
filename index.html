@@ -39,36 +39,45 @@
         <hr>
 
         <h2>2. Counter</h2>
-        <button id="counter_button">This fabulous button</button>
+        <button id="counter_button" onclick="clicar()">This fabulous button</button>
+        <button id="reset" onclick="resetar()">Resetar</button>
         has been clicked <span id="countspan">0</span> times.
         <script>
-            let count = 0;
-            const countspan = document.getElementById("countspan");
-            
-            const counter_button = document.getElementById("counter_button");
-            counter_button.onclick = function() {
-                /* TODO 2
-                 *
-                 *  A função incrementa 1 em um contador "count", 
-                 *  atualiza o conteúdo de texto do "countspan" 
-                 *  e mostra o valor atual de "count".
-                 */
+            let count = 0 
+            function clicar(){
+                let contar = document.getElementById('countspan')
+                contar.innerHTML = count++      
+            }
+
+            function resetar(){
+                let apagar =  document.getElementById('countspan')
+                apagar.innerHTML = "0"
+                count = 0 
             }
         </script>
 
         <hr>
 
         <h2>3. Even or Odd?</h2>
-        <button id="even_or_odd_button">Is the count even or odd?</button>
+        <button id="even_or_odd_button" onclick="parOuImpar()">Is the count even or odd?</button>
         <script>
-            const even_or_odd_button = document.getElementById("even_or_odd_button");
-            even_or_odd_button.onclick = function() {
+                function parOuImpar(){
+                    let contar = document.getElementById('countspan')
+                    contar.innerHTML = count++ 
+
+                    if(count % 2 == 0){
+                        alert('Par')
+                    } else if(count % 2 !== 0){
+                        alert('Ímpar')
+                    }
+                     contar.innerHTML = count
+            }
+
                 /* TODO 3
                  *
                  * A função mostra um "alert dialog" mostrando se o contador 
                  * (da segunda tarefa (TODO 2)) é par ou impar.
                  */
-            }
         </script>
     </body>
 </html>
